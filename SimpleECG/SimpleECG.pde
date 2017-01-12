@@ -1,3 +1,6 @@
+import processing.sound.*;
+SoundFile file;
+
 int xinterval = 0;
 int baseline = 300;
 int shift = 200;
@@ -10,13 +13,15 @@ void setup () {
   background(255);
   font = createFont("Arial",16);
   textFont(font);
-  frameRate(2);
+  frameRate(1.5);
   now = millis();
+  file = new SoundFile(this, "sample.mp3");
+  file.play();
 }
 void draw () {
 
   fill(0,0,128);
-  text("F3",29,24);
+  text("Pulse: ",29,24);
 
   fill(0);
   stroke(0);
@@ -45,9 +50,7 @@ void draw () {
   
   if (xinterval*shift >= width) {
     xinterval = 0;
-
     background(255);
-
   } 
   else {
     xinterval++;
