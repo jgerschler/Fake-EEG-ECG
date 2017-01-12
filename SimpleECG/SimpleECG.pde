@@ -16,7 +16,7 @@ void setup () {
 void draw () {
 
   fill(0,0,128);
-  //text("F3",29,24);
+  text("F3",29,24);
 
   fill(0);
   stroke(0);
@@ -29,14 +29,11 @@ void draw () {
   line(xinterval*shift+60,height - (baseline + 16),xinterval*shift+64,height - (baseline + 16));
   line(xinterval*shift+64,height - (baseline + 16),xinterval*shift+70,height - baseline);
   line(xinterval*shift+70,height - baseline,xinterval*shift+86,height - baseline);
-//  if(millis()-now >= wait){
-    //QRS Complex
+  //QRS Complex
   line(xinterval*shift+86,height - baseline,xinterval*shift+94,height - (baseline - 16));
   line(xinterval*shift+94,height - (baseline - 16),xinterval*shift+98,height - (baseline + 146));
   line(xinterval*shift+98,height - (baseline + 146),xinterval*shift+106,height - (baseline - 30));
   line(xinterval*shift+106,height - (baseline - 30),xinterval*shift+114,height - baseline);
-//    now = millis();
-//  }
   //ST segment and T wave
   line(xinterval*shift+114,height - baseline,xinterval*shift+134,height - baseline);
   line(xinterval*shift+134,height - baseline,xinterval*shift+150,height - (baseline + 20));
