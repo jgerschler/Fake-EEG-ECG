@@ -5,6 +5,8 @@ int xinterval = 0;
 int baseline = 300;
 int shift = 200;
 int now;
+int framesPerSecond = 1;
+int pulse = 60*framesPerSecond;
 int wait = 1000;
 PFont font;
 
@@ -13,16 +15,14 @@ void setup () {
   background(255);
   font = createFont("Arial",16);
   textFont(font);
-  frameRate(1.5);
+  frameRate(framesPerSecond);
   now = millis();
-  file = new SoundFile(this, "sample.mp3");
-  file.play();
+  file = new SoundFile(this, "beep.mp3");
 }
 void draw () {
-
   fill(0,0,128);
-  text("Pulse: ",29,24);
-
+  text("Pulse: "+str(pulse),29,24);
+  file.play();
   fill(0);
   stroke(0);
   strokeWeight(1);
