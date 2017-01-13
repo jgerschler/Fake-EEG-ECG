@@ -13,15 +13,15 @@ PFont font;
 void setup () {
   size(1024, 768);        
   background(255);
-  font = createFont("Arial",16);
+  font = createFont("Arial",48);
   textFont(font);
   frameRate(framesPerSecond);
   now = millis();
   file = new SoundFile(this, "beep.mp3");
+  fill(0,0,128);
+  text("Pulse: "+str(pulse),50,80);
 }
 void draw () {
-  fill(0,0,128);
-  text("Pulse: "+str(pulse),29,24);
   file.play();
   fill(0);
   stroke(0);
@@ -51,6 +51,8 @@ void draw () {
   if (xinterval*shift >= width) {
     xinterval = 0;
     background(255);
+    fill(0,0,128);
+    text("Pulse: "+str(pulse),50,80);
   } 
   else {
     xinterval++;
